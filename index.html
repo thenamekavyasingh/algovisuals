@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AlgoWhiz</title>
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+
+  <!-- 🌌 Background effect layer -->
+  <div class="bg-blur"></div>
+
+  <!-- 💎 Glass Container -->
+  <div class="glass-card">
+    <h1 class="title">AlgoWhiz 🚀</h1>
+    <h2 class="typing-text"></h2>
+    <div class="button-group">
+      <a href="sorting/index.html" class="btn">🔢 Sorting Visualizer</a>
+      <a href="graph/index.html" class="btn">📈 Graph Visualizer</a>
+    </div>
+  </div>
+
+  <script>
+    const text = "Welcome to Algo Visuals!";
+    const typingElement = document.querySelector(".typing-text");
+    let i = 0;
+    function typeNext() {
+      if (i < text.length) {
+        typingElement.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeNext, 80);
+      }
+    }
+    typeNext();
+  </script>
+</body>
+</html>

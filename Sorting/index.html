@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sorting Visualizer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- 🌌 Background Blobs -->
+  <div class="bg-blur"></div>
+
+  <!-- 💎 Glass Container -->
+  <div class="glass-card">
+  <!-- 🌙 Dark Mode Toggle (top-right corner) -->
+<div class="theme-toggle">
+  <input type="checkbox" id="mode-toggle">
+  <label for="mode-toggle">🌙</label>
+</div>
+
+    <h1 class="header animated-title">🔢 Sorting Visualizer</h1>
+
+    <!-- Wrapper for visual area and controls -->
+    <div class="container">
+
+      <!-- 📊 Bars will appear here dynamically via JS -->
+      <div class="visual-area" id="bars-container"></div>
+
+      <!-- ⚙️ Control panel -->
+      <div class="control-panel">
+        <h3>Settings</h3>
+
+        <label for="size-slider">Array Size</label>
+        <input type="range" id="size-slider" min="5" max="100" value="20" />
+
+        <label for="speed-slider">Speed</label>
+        <input type="range" id="speed-slider" min="1" max="10" value="5" />
+
+        <label for="algo-select">Algorithm</label>
+        <select id="algo-select">
+          <option value="bubble">Bubble Sort</option>
+          <option value="selection">Selection Sort</option>
+          <option value="insertion">Insertion Sort</option>
+          <option value="merge">Merge Sort</option>
+          <option value="quick">Quick Sort</option>
+        </select>
+        <div class="input-toggle">
+             <label><input type="radio" name="input-mode" value="random" checked> Random Array</label>
+             <label><input type="radio" name="input-mode" value="custom"> Custom Array</label>
+        </div>
+
+        <div id="custom-input-box" style="display:none;">
+            <label for="custom-array">Enter array (comma-separated, 10-300 values):</label>
+            <input type="text" id="custom-array" placeholder="e.g. 50, 120, 75" />
+            <button id="use-custom-array">Use This Array</button>
+            <button id="clear-input">❌ Clear</button>
+        </div>
+
+        <button id="new-array">🔄 Generate New Array</button>
+        <button id="start-sort">▶ Start Sorting</button>
+
+      
+    </div>
+
+    <!-- 📘 Explanation area -->
+    <div class="explanation-box">
+      <h4>Explanation</h4>
+      <p id="algo-description">
+        Bubble Sort: Repeatedly compares adjacent elements and swaps them if out of order. This continues until the array is sorted.
+      </p>
+    </div>
+
+  </div>
+  
+  <!-- JS file -->
+  <script src="script.js"></script>
+  <!-- 🎉 Confetti JS CDN -->
+
+</body>
+</html>
