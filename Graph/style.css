@@ -1,0 +1,401 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #1e1e2f, #232336);
+  padding: 40px 20px;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* 🌌 Background blurry blobs */
+.bg-blur {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 10% 20%, #3b82f6 0%, transparent 50%),
+              radial-gradient(circle at 80% 30%, #9333ea 0%, transparent 50%),
+              radial-gradient(circle at 50% 90%, #14b8a6 0%, transparent 50%);
+  filter: blur(80px);
+  opacity: 0.3;
+  z-index: 0;
+}
+
+/* 💎 Glass wrapper */
+.glass-card {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 30px;
+  max-width: 1400px;
+  margin: auto;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Heading */
+.header {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.animated-title {
+  animation: zoomBounce 0.9s ease-out;
+  transform-origin: center;
+}
+
+@keyframes zoomBounce {
+  0%   { transform: scale(0.3); opacity: 0; }
+  50%  { transform: scale(1.2); opacity: 1; }
+  70%  { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+/* Layout */
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* 👁️ Visual Canvas */
+.visual-area {
+  flex: 3;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  width: 100%;        /* ✅ Force full width */
+  max-width: 100%;    /* ✅ Prevent overflow */
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* ⚙️ Control Panel */
+.control-panel {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 280px;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+  color: #fff;
+}
+
+.control-panel label {
+  font-weight: bold;
+  margin-top: 10px;
+  display: block;
+}
+
+.control-panel input,
+.control-panel select,
+.control-panel button,
+.control-panel textarea {
+  width: 100%;
+  margin: 8px 0;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.control-panel textarea {
+  resize: vertical;
+}
+
+.control-panel button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.control-panel button:hover {
+  background-color: #0056b3;
+}
+
+.control-panel button:active {
+  transform: scale(0.97);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.control-panel input[type="range"],
+.control-panel select {
+  cursor: pointer;
+}
+
+/* 📘 Explanation Box */
+.explanation-box {
+  margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.1);
+  color: #fff;
+}
+
+/* 🌙 Dark Mode */
+body.dark {
+  background: linear-gradient(to bottom right, #0c0c18, #1e1e2f);
+  color: #fff;
+}
+
+body.dark .glass-card,
+body.dark .visual-area,
+body.dark .control-panel,
+body.dark .explanation-box {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+body.dark .control-panel button {
+  background-color: #3b82f6;
+}
+
+body.dark .control-panel button:hover {
+  background-color: #2563eb;
+}
+
+/* 🌗 Dark Mode Toggle */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  z-index: 99;
+}
+/* ✅ Toggle when placed INSIDE the glass card (like Sorting Visualizer) */
+.theme-toggle.inner-toggle {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 2;
+}
+
+.theme-toggle input {
+  display: none;
+}
+
+.theme-toggle label {
+  background: #fff;
+  color: #000;
+  font-size: 20px;
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+body.dark .theme-toggle label {
+  background: #222;
+  color: #fff;
+}
+
+/* 🕸️ Graph Nodes */
+.node {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: #f39c12;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 16px;
+  z-index: 2;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.node.visited {
+  background-color: #3498db;
+}
+
+.node.current {
+  background-color: #2ecc71;
+  transform: scale(1.2);
+}
+
+.node.final {
+  background-color: #28a745 !important;
+  box-shadow: 0 0 10px #28a745aa;
+}
+
+.node span {
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ➰ Graph Edges */
+.edge {
+  position: absolute;
+  height: 2px;
+  background-color: #ffffffaa;
+  transform-origin: 0% 0%;
+  z-index: 1;
+}
+
+.edge.directed::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  border: 5px solid transparent;
+  border-left-color: #fff;
+}
+
+/* Edge Weight Label */
+.edge-label {
+  position: absolute;
+  background: #000000a0;
+  color: white;
+  padding: 2px 6px;
+  font-size: 12px;
+  border-radius: 4px;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Highlighted Edge */
+.edge.active {
+  background-color: #00bcd4;
+  box-shadow: 0 0 6px #00bcd4aa;
+}
+/* ✅ Responsive Fixes */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .visual-area {
+    width: 100%;
+    height: 300px; /* smaller height on small screen */
+    margin-bottom: 20px;
+  }
+
+  .control-panel {
+    width: 100%;
+  }
+
+  .glass-card {
+    padding: 20px;
+  }
+
+  .theme-toggle {
+    top: 15px;
+    right: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .glass-card {
+    margin: 10px;
+    border-radius: 10px;
+    padding: 15px;
+  }
+}
+
+/* 🌓 Dark Mode Node Color Override */
+body.dark .node {
+  background-color: #3b82f6; /* Neon blue */
+  box-shadow: 0 0 12px #3b82f6aa;
+}
+
+body.dark .node.current {
+  background-color: #10b981; /* Teal for active node */
+}
+
+body.dark .node.visited {
+  background-color: #6366f1; /* Indigo-ish visited */
+}
+
+body.dark .node.final {
+  background-color: #22c55e !important; /* Green finish */
+  box-shadow: 0 0 10px #22c55eaa;
+}
+body.dark .edge {
+  background-color: #94a3b8; /* light slate */
+}
+
+body.dark .edge.active {
+  background-color: #38bdf8;
+  box-shadow: 0 0 8px #38bdf8aa;
+}
+/* 📱 Stop the graph canvas collapsing on narrow screens  */
+@media (max-width: 900px) {
+  /* 1️⃣  Take the canvas out of the flex shrink game        */
+  .visual-area {
+    flex: 0 0 auto !important;   /*  0 0 auto  = no grow, no shrink  */
+    width: 100%   !important;    /*  full width in the column layout */
+    min-height: 300px !important;/*  never shorter than this         */
+    height: 300px   !important;   /*  let content / min‑height drive  */
+    overflow: auto;
+  }
+  
+  /* 2️⃣  Stack layout like sorting visualizer                 */
+  .container {
+    flex-direction: column !important;
+    align-items: stretch   !important;
+  }
+
+  /* 3️⃣  Control panel takes full width underneath             */
+  .control-panel {
+    width: 100% !important;
+  }
+}
+/* 🧾 Output Card Styles */
+.output-card {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+  white-space: pre-wrap;
+}
+
+/* 🌙 Dark mode compatible */
+body.dark .output-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+

@@ -1,15 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Graph Visualizer</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div class="container">
-    <h1>📈 Graph Visualizer</h1>
-    <p>Coming Soon...</p>
-    <a href="index.html" class="btn">⬅ Back to Home</a>
+  <!-- 🌌 Background -->
+  <div class="bg-blur"></div>
+
+  <div class="glass-card">
+  <h1 class="header animated-title">🕸️ Graph Visualizer</h1>
+
+  <!-- 🌙 Dark Mode (inside card now) -->
+  <div class="theme-toggle inner-toggle">
+    <input type="checkbox" id="mode-toggle" />
+    <label for="mode-toggle">🌙</label>
   </div>
+
+
+    <div class="container">
+      <!-- 📍 Graph Area -->
+      <div class="visual-area" id="graph-canvas">
+        <!-- Nodes & Edges will render here -->
+      </div>
+
+      <!-- ⚙️ Control Panel -->
+      <div class="control-panel">
+        <h3>Settings</h3>
+
+        <label for="graph-type">Graph Type</label>
+        <select id="graph-type">
+          <option value="undirected">Undirected</option>
+          <option value="directed">Directed</option>
+        </select>
+
+        <label>
+          <input type="checkbox" id="weighted-toggle" />
+           Weighted
+          </label>
+
+        <label>
+          <input type="checkbox" id="acyclic-toggle" />
+          Acyclic (DAG)
+        </label>
+
+
+        <label for="input-mode">Input Type</label>
+        <select id="input-mode">
+          <option value="adjacency-list">Adjacency List</option>
+          <option value="adjacency-matrix">Adjacency Matrix</option>
+          <option value="random">Random Graph</option>
+          <option value="custom">Custom Graph</option>
+        </select>
+
+        <label for="graph-input">Graph Input</label>
+        <textarea id="graph-input" rows="3" placeholder="e.g. 0:1,2 1:2 2:3"></textarea>
+
+        <label for="algo-select">Algorithm</label>
+        <select id="algo-select">
+          <option value="bfs">BFS</option>
+          <option value="dfs">DFS</option>
+          <option value="topo">Topological Sort</option>
+          <option value="dijkstra">Dijkstra</option>
+          <option value="bellman-ford">Bellman-Ford</option>
+        </select>
+
+        <label for="speed-slider">Speed</label>
+        <input type="range" id="speed-slider" min="1" max="10" value="5" />
+
+        <button id="generate-graph">🔄 Generate</button>
+        <button id="random-graph">🔀 Random</button>
+        <button id="start-visualization">▶ Start</button>
+      </div>
+    </div>
+    <!-- 🧾 Output Path Section (hidden by default) -->
+    <div id="output-box" class="output-card" style="display: none;">
+      <h4>🔍 Output</h4>
+      <pre id="output-content">Path or result will appear here...</pre>
+    </div>
+
+    <!-- 📘 Explanation -->
+    <div class="explanation-box">
+      <h4>Explanation</h4>
+      <p id="algo-description">Select an algorithm to begin.</p>
+    </div>
+  </div>
+
+  <script type="module" src="script.js"></script>
 </body>
 </html>
+
