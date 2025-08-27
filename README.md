@@ -40,7 +40,7 @@
    npm install
    npm run dev
 
-🔮 Roadmap
+##🔮 Roadmap
 
 -> Add Heap Sort, Counting Sort, Radix Sort
 
@@ -50,7 +50,7 @@
 
 -> Mobile-optimized UI
 
-👩‍💻 Author
+##👩‍💻 Author
 
 Made with ❤️ by Kavya Singh
 🌟 If you liked the project, don’t forget to star ⭐ the repo !!
