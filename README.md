@@ -22,6 +22,12 @@
 - Traversal order output
 ---
 
+## Preview
+![Screenshot 1](images/s1.png)
+
+![Screenshot 1](images/s2.png)
+
+![Screenshot 1](images/s3.png)
 
 ## 🛠 Tech Stack
 
