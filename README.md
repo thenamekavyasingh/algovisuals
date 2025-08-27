@@ -1,6 +1,6 @@
 #  AlgoVisuals (AlgoWhiz)
 
-**AlgoVisuals** (a.k.a. **AlgoWhiz**) is a beginner-friendly, visual platform that brings popular algorithms to life. Currently focusing on sorting, with graph algorithms coming soon!
+**AlgoVisuals** (a.k.a. **AlgoWhiz**) is a beginner-friendly, visual platform that brings popular algorithms to life. Currently focusing on sorting, with graph algorithms !
 
 ---
 
