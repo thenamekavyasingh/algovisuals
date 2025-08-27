@@ -13,7 +13,7 @@
 - Adjustable array size and animation speed  
 - Explanation box for each algorithm
 
-### Graph Visualizer (Coming Soon)
+### Graph Visualizer
 - Interactive graph creation (random or custom input)  
 - Support for directed/undirected and weighted/unweighted edges  and acyclic graph
 - Algorithms planned: BFS, DFS, Shortest Paths (e.g., Dijkstra’s, Bellman-Ford)  
@@ -22,10 +22,6 @@
 - Traversal order output
 ---
 
-##  Live Demo
-_(If hosted on GitHub Pages or another platform, include your live link here.)_
-
----
 
 ## 🛠 Tech Stack
 
@@ -46,10 +42,20 @@ _(If hosted on GitHub Pages or another platform, include your live link here.)_
 
 🔮 Roadmap
 
-Add Heap Sort, Counting Sort, Radix Sort
+-> Add Heap Sort, Counting Sort, Radix Sort
 
-Graph algorithms: Floyd-Warshall, Prim’s, Kruskal’s
+-> Graph algorithms: Floyd-Warshall, Prim’s, Kruskal’s
 
-Export animations as GIF/video
+-> Export animations as GIF/video
 
-Mobile-optimized UI
+-> Mobile-optimized UI
+
+👩‍💻 Author
+
+Made with ❤️ by Kavya Singh
+🌟 If you liked the project, don’t forget to star ⭐ the repo !!
+
+🤝 Contributions
+
+Contributions, issues, and feature requests are welcome!
+Feel free to fork this repo and open a PR.
