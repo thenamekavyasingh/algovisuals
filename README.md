@@ -39,6 +39,7 @@
    cd algovisuals
    npm install
    npm run dev
+---
 
 ##🔮 Roadmap
 
